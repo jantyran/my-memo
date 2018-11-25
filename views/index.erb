@@ -1,0 +1,15 @@
+
+<ul class="memo-titles">
+
+    <% @memos.each_with_index do |memo, index| %>
+    <li data-id= "<%= memo['id'] %>">
+        <a href="/memo/<%= memo['id'] %>">
+          <%= memo['title'] %>  
+        </a>
+    </li>
+    <% end %>
+
+</ul>
+<div class="button new-in-top">
+    <a href="/create">Add memo</a>
+</div>

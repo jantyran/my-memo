@@ -1,0 +1,22 @@
+
+<h2>Memo contents</h2>
+
+
+<div data-id= "<%= @memo['id'] %>" class="memo-body border fixed">
+    <div>
+      <%= @memo['title'] %>
+      <%= @memo['body'] %>  
+    </div>
+</div>
+
+<div class="cover-center-button">
+	<div class="button">
+	    <a href="/memo/edit/<%= @memo['id'] %>">edit</a>
+	</div>
+
+	<form class="button" method="post" action="/memo/delete/<%= @memo['id'] %>">
+		<input type="hidden" name="_method" value="DELETE">
+		<input type="submit" value="delete">
+	</form>
+</div>
+
