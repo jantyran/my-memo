@@ -1,7 +1,7 @@
 require "rubygems"
 require 'bundler/setup'
 require "sinatra"
-require 'active_record'
+# require 'active_record'
 require 'sinatra/reloader'
 # require 'rack-contrib'
 require 'json'
@@ -24,7 +24,7 @@ $memos = $json_data['memos']
 #
 
 # return the memo related with the id
-def getMemo(m_id)
+def memo(m_id)
   r_memo = ""
   $memos.each do |memo|
     if memo['id'].to_s == m_id.to_s then
@@ -38,7 +38,7 @@ def getMemo(m_id)
 end
 
 # rewrite the json_data
-def rewriteJson
+def rewrite_json
   File.open("json/test.json", 'w') do |file|
     JSON.dump($json_data, file)
   end
@@ -56,7 +56,7 @@ end
 
 # show memo contents
 get "/memo/:id" do
-  @memo = getMemo(params[:id])
+  @memo = memo(params[:id])
   erb :memo_details
 end
 
@@ -81,7 +81,7 @@ post "/addNew" do
   $json_data['memos'].push(new_memo)
   # new_json = JSON.pretty_generate(json_data) ---- JSON.dumpでhashから自動的にjsonフォーマットに変更されるからいらなかった。
 
-  rewriteJson
+  rewrite_json
 
 	redirect '/'
 	erb :index
@@ -99,7 +99,7 @@ delete '/memo/delete/:id' do
     num += 1
   end
 
-  rewriteJson
+  rewrite_json
 
   redirect '/'
   erb :index
@@ -107,7 +107,7 @@ end
 
 # to editer page.
 get '/memo/edit/:id' do
-  @memo = getMemo(params[:id])
+  @memo = memo(params[:id])
   erb :edit
 end
 
@@ -127,7 +127,7 @@ patch '/memo/do-edit/:id' do
     num += 1
   end
 
-  rewriteJson
+  rewrite_json
   
   redirect '/'
   erb :index
