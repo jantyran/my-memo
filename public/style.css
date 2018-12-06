@@ -1,0 +1,84 @@
+h1 {
+	margin-left:11%;
+}
+h2 {
+	text-align: center;
+}
+input {
+	font-size: 100%;
+	color: white;
+    background-color: gray;
+    border: none;
+}
+textarea {
+	font-size: 100%
+}
+.memo-titles {
+	width: 75%;
+    margin: 50px auto;
+    min-height: 300px;
+    border: solid gray;
+    padding: 20px;
+    list-style: none;
+}
+.button {
+	background-color: gray;
+	text-align: center;
+	width: 100px;
+	height: 30px;
+	vertical-align: middle;
+	margin: 10px;
+	display: table-cell;
+	border-radius: 10px;
+	color: white;
+}
+.new-in-top {
+	position: absolute;
+	right: 10%;
+	top: 5%;
+}
+.new-in-top a {
+	position: relative;
+	top: 10%;
+}
+.memo-title { 
+	margin: auto;
+	display: block;
+	width: 50%;
+	height: 10%;
+	background-color: white;
+	color: black;
+	padding: 5px;
+}
+.memo-body {
+	width: 80%;
+	height: 60%;
+	margin: 30px auto;
+	display: block;
+	min-height: 300px;
+	vertical-align: top;
+}
+.button a {
+	text-decoration-line: none;
+	color: white;
+}
+.add {
+	display: block;
+	margin: auto;
+}
+.border {
+	border: solid 5px gray;
+	padding: 5px;
+}
+.cover-center-button {
+	width: 80%;
+	margin: auto;
+	text-align: center;
+}
+.cover-center-button .button {
+	display: inline-block;
+	margin: 0 30px;
+}
+.fixed {
+	background-color: lightgray;
+}

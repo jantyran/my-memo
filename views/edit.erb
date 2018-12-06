@@ -1,0 +1,8 @@
+<h2>Eddit memo</h2>
+<form method="post" action="/memo/do-edit/<%= @memo['id'] %>">
+	<input type="text" name="title" class="memo-title border" value="<%= @memo['title'] %>">
+	<textarea name="body" class="memo-body border"><%= @memo['body'] %></textarea>
+    <input type="hidden" name="_method" value="PATCH">
+	<input type="submit" value="edit done" class="button add">
+</form>
+
